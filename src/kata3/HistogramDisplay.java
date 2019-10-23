@@ -10,7 +10,7 @@ import org.jfree.ui.ApplicationFrame;
 
 public class HistogramDisplay extends ApplicationFrame{
 
-    private Histogram<String> histogram;
+    private Histogram histogram;
     public HistogramDisplay(Histogram histogram) {
         super("HISTOGRAMA");
         this.histogram = histogram;
@@ -44,8 +44,8 @@ public class HistogramDisplay extends ApplicationFrame{
 
     private DefaultCategoryDataset createDataset() {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for (String key : this.histogram.ketSet()) {
-            dataset.addValue(this.histogram.get(key),"",key);
+        for (Object key : this.histogram.ketSet()) {
+            dataset.addValue(this.histogram.get(key),"",key.toString());
         }
         return dataset;
     }
